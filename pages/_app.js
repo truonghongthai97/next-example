@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import { appWithTranslation } from 'next-i18next';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import "../styles/globals.css";
+
+export function reportWebVitals(metric) {
+  console.log(111, metric);
 }
 
-export default MyApp
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default appWithTranslation(MyApp);
