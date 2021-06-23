@@ -2,7 +2,7 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 
 import Loading from "/components/Loading";
-import S from "/styles/Home.module.scss";
+import S from "/styles/pages/Home.module.scss";
 
 const DynamicComponentWithCustomLoading = dynamic(
   import("/components/hello").then((mod) => mod.Hello),

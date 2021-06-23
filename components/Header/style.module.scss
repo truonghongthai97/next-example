@@ -1,7 +1,9 @@
+@import "/styles/abstracts/variables";
+
 .navbar {
   position: relative;
   z-index: 1;
-  background-color: white;
+  background-color: $white;
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -40,7 +42,7 @@
     padding: 10px 30px;
 
     &:hover {
-      color: #f06c5f;
+      color: $primary-color;
     }
   }
 
@@ -50,7 +52,7 @@
     left: 0;
     width: 100%;
     flex-direction: column;
-    background: white;
+    background: $white;
 
     &__item {
       display: block;

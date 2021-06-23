@@ -7,7 +7,9 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Footer from "/components/Footer";
-import S from "/styles/Home.module.scss";
+
+import S from "/styles/pages/Home.module.scss";
+import commonS from "/styles/pages/common.module.scss";
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
@@ -26,10 +28,16 @@ export default function Home() {
           width="64"
           height="64"
         />
-        <p className={S.container__title}>{counter}</p>
+        <p>{counter}</p>
         <button onClick={() => setCounter(counter + 1)}>Increase</button>
 
         {t("about_us")}
+
+        <div className={commonS.box}>123</div>
+
+        <p>123</p>
+
+        <div className={commonS.box}>456</div>
 
         <Footer />
       </div>

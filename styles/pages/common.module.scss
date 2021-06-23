@@ -1,0 +1,8 @@
+@import "/styles/abstracts/variables";
+
+.box {
+  padding: 15px;
+  background-color: $white;
+  border-radius: $border-radius-base;
+  box-shadow: $shadow-sm;
+}

@@ -1,0 +1,50 @@
+// >> Font-size
+$font-size-xs: 10px;
+$font-size-small: 12px;
+$font-size-base: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+
+// >> Font-weight
+$font-weight-light: 300;
+$font-weight-base: 400;
+$font-weight-bold: 600;
+
+// >> Border radius
+$border-radius-small: 3px;
+$border-radius-base: 5px;
+$border-radius-medium: 8px;
+
+// z-index
+$z-indexes: (
+  base: 1,
+  upper: 2,
+  under: -1,
+  modal: 1001,
+  sidebar: 0,
+  sidebar-active: 9,
+  title-page: 9,
+  popup: 999,
+  selectize: 1060,
+  flast-message: 2000,
+);
+
+// colors
+$primary-color: #f06c5f;
+$secondary-color: #6c757d;
+$success-color: #198754;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #0dcaf0;
+
+$black: #000;
+
+$white: #fff;
+
+// box-shadow
+
+$shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$shadow: 0 0.125rem 0.25rem rgba($black, 0.075);
+$shadow-lg: 0 0.125rem 0.25rem rgba($black, 0.075);
