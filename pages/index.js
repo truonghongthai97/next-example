@@ -1,45 +1,44 @@
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import Meta from "/components/Meta";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useSelector, useDispatch } from "react-redux";
 
-import Footer from "/components/Footer";
+import {
+  decrement,
+  increment,
+  incrementByAmount,
+  incrementAsync,
+  selectCount,
+} from "/store/counterSlice";
+
+import { fetchUser } from "/store/userSlice";
 
 import S from "/styles/pages/Home.module.scss";
-import commonS from "/styles/pages/common.module.scss";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [counter, setCounter] = useState(0);
-  const router = useRouter();
-  const locale = router.locale;
-  const { t } = useTranslation("common");
+  const count = useSelector(selectCount);
+  const { user, loading } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  console.log(111, user);
+
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, []);
 
   return (
     <>
       <Meta title="Home" description="Home description" />
       <div className={S.container}>
-        <Link href="/about">About</Link>
-        <Image
-          src="/images/profile.jpg"
-          alt="Picture of the author"
-          width="64"
-          height="64"
-        />
-        <p>{counter}</p>
-        <button onClick={() => setCounter(counter + 1)}>Increase</button>
+        <div>count: {count}</div>
 
-        {t("about_us")}
+        {loading ? <div>Loading...</div> : <div>User: {user.name}</div>}
 
-        <div className={commonS.box}>123</div>
-
-        <p>123</p>
-
-        <div className={commonS.box}>456</div>
-
-        <Footer />
+        <button onClick={() => dispatch(increment())}>increment</button>
+        <button onClick={() => dispatch(decrement())}>decrement</button>
+        <button onClick={() => dispatch(incrementByAmount(10))}>
+          incrementByAmount
+        </button>
       </div>
     </>
   );
