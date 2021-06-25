@@ -6,3 +6,21 @@
     font-size: $font-size-xxl;
   }
 }
+
+.customFooter {
+  :global {
+    .title {
+      color: #000;
+    }
+  }
+}
+
+.rootChild {
+  :global {
+    .child {
+      &__title {
+        color: blue;
+      }
+    }
+  }
+}

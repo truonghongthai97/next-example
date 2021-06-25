@@ -1,0 +1,11 @@
+.root {
+  background-color: #dcdcdc;
+
+  :global {
+    .child {
+      &__title {
+        color: green;
+      }
+    }
+  }
+}

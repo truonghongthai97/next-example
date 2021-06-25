@@ -15,16 +15,22 @@ import { fetchUser } from "/store/userSlice";
 import S from "/styles/pages/Home.module.scss";
 import { useEffect } from "react";
 
+
+// DEMO
+import { useGetPokemonByNameQuery } from '/services/pokemon'
+
 export default function Home() {
   const count = useSelector(selectCount);
   const { user, loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  console.log(111, user);
-
   useEffect(() => {
     dispatch(fetchUser());
-  }, []);
+  }, [dispatch]);
+
+  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
+  console.log("🚀 ~ file: index.js ~ line 32 ~ Home ~ isLoading", isLoading)
+  console.log("🚀 ~ file: index.js ~ line 32 ~ Home ~ data", data)
 
   return (
     <>

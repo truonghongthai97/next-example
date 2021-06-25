@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 
 export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
   const response = await fetch("http://localhost:3000/api/user");
@@ -6,8 +6,15 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
   return user;
 });
 
+export const fetchUsers = createAsyncThunk("user/fetchUsers", async () => {
+  const response = await fetch("http://localhost:3000/api/users");
+  const user = await response.json();
+  return user;
+});
+
 const initialState = {
   user: {},
+  users:[],
   loading: false,
 };
 
